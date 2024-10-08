@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBER VAULT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: #3473d1;
+            padding: 10px;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+
+        .nav-center {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            gap: 1.5rem;
+        }
+
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            font-size: 18px;
+        }
+
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+            margin-right: 3rem;
+        }
+
+        .nav-right li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            font-size: 18px;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 6rem;
+
+        }
+
+        .form-container {
+            background-color: #E7F0FF;
+            flex: 1;
+            max-width: 380px;
+            margin: 40px;
+            padding: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 10px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3473d1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #1c5ec7;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .name-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .name-field {
+            flex: 1;
+        }
+
+        .name-field input {
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #1c5ec7;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .social-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/Web_Photo_Editor-removebg-preview.png?alt=media&token=a8aa1779-2c2c-4cc7-86b4-736745cff310"
+                    alt="Logo" />
+            </a>
+        </div>
+
+        <ul class="nav-center">
+            <li><a href="#">About</a></li>
+            <li><a href="{% url 'create_todo' %}">Passwords</a></li>
+            <li><a href="{% url 'blogs' %}">Blogs</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <ul class="nav-right">
+            <li><a href="">WELCOME, </a>{{ request.user.username }}</li>
+            <li><a href="{% url 'login' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/mjkvbelw" method="post">
+                <div class="name-container">
+                    <div class="name-field">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" required>
+                    </div>
+                    <div class="name-field">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname" required>
+                    </div>
+                </div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="contactno">Contact Number</label>
+                <input type="tel" id="contactno" name="contactno" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/Contact_us-amico__1_-removebg-preview.png?alt=media&token=026ccbf8-18b0-4c40-ae22-978c60ea721a"
+                alt="Contact Us Image" width=600px>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 CYBER VAULT. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

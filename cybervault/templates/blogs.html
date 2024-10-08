@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBER VAULT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: #3473d1;
+            padding: 10px;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .nav-center {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            gap: 1.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            font-size: 18px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+            margin-right: 3rem;
+        }
+
+        .nav-right li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            font-size: 18px;
+        }
+
+        .footer {
+            background-color: #1c5ec7;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .social-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .blogs {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .blogs h1 {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+            color: #3473d1;
+            font-size: 3rem;
+        }
+
+        .blog-card {
+            background-color: #E7F0FF;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .blog-card h3 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+        }
+
+        .blog-card button {
+            background-color: #3473d1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .blog-card button:hover {
+            background-color: #285a9a;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/Web_Photo_Editor-removebg-preview.png?alt=media&token=a8aa1779-2c2c-4cc7-86b4-736745cff310"
+                    alt="Logo" />
+            </a>
+        </div>
+        <ul class="nav-center">
+            <li><a href="#">About</a></li>
+            <li><a href="{% url 'blogs'%}">Passwords</a></li>
+            <li><a href="{% url 'blogs'%}">Blogs</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <ul class="nav-right">
+            <li><a href="">WELCOME, </a>{{ request.user.username }}</li>
+        <li><a href="{% url 'login' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="blogs">
+        <h1 style="text-align:center; width: 100%; margin-bottom: 30px;
+            color: #3473d1;">Blogs</h1>
+        <div class="blog-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/screenshot20230623-9891-7aobb4.png?alt=media&token=e22a870b-48d2-419c-b3f5-4029b4f06d22" style="margin-bottom: 10px;" alt="Blog 1" />
+            <h3>5 steps to move from HTTP to HTTPS</h3>
+            <button>Learn More</button>
+        </div>
+        <div class="blog-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/cyber-attack-concept-hacker-computer-600nw-2178049635.webp?alt=media&token=1f5b7768-c32d-402d-8733-cefec140d102" alt="Blog 2" />
+            <h3>Role of cybersecurity in contrator management</h3>
+            <button>Learn More</button>
+        </div>
+        <div class="blog-card">
+            <img src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/screenshot20230623-9891-7aobb4.png?alt=media&token=e22a870b-48d2-419c-b3f5-4029b4f06d22" style="margin-bottom: 10px;" alt="Blog 3" width="300px" height="400px"/>
+            <h3>From scam to securing your data</h3>
+            <button>Learn More</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 CYBER VAULT. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
