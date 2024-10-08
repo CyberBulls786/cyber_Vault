@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CYBER VAULT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <style>
+    *{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        background-color: #3473d1;
+        padding: 10px;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+      }
+
+      .logo img {
+        height: 80px;
+      }
+
+ 
+      .nav-center {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        gap: 1.5rem;
+      }
+
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 14px;
+        font-size: 18px;
+      }
+
+
+      .nav-right {
+        display: flex;
+        gap: 1.5rem;
+        margin-right:3rem;
+      }
+
+      .nav-right li a {
+        color: white;
+        text-decoration: none;
+        padding: 14px;
+        font-size: 18px;
+      }
+      button a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+      }
+      button {
+        background-color: #1c5ec7;
+        border: #3b71ca;
+        padding: 10px;
+        border-radius: 0.5rem;
+      }
+
+      section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+        width: 100%;
+      }
+
+      .text h1{
+        font-size:3.5rem;
+      }
+
+      .text h2{
+        font-size: 2.2rem;
+      }
+
+      .text{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+
+      .footer {
+        background-color:  #1c5ec7; 
+        color: white; 
+        padding: 30px; 
+        text-align: center; 
+      }
+
+      .footer-content {
+        max-width: 1200px; 
+        margin: 0 auto;
+      }
+      
+
+      .social-links {
+        list-style: none; 
+        padding: 0; 
+        margin: 10px 0 0; 
+      }
+
+      .social-links li {
+        display: inline;
+        margin: 0 10px; 
+      }
+
+      .social-links a {
+        color: white; 
+        text-decoration: none; 
+      }
+
+      .social-links a:hover {
+        text-decoration: underline; 
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="{% url 'home' %}">
+          <img src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/Web_Photo_Editor-removebg-preview.png?alt=media&token=a8aa1779-2c2c-4cc7-86b4-736745cff310" alt="Logo" />
+        </a>
+      </div>
+      
+      <ul class="nav-center">
+        <li><a href="#">About</a></li>
+        <li><a href="{% url 'create_todo'%}">Passwords</a></li>
+        <li><a href="{% url 'blogs'%}">Blogs</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+
+      <ul class="nav-right">
+        <li><a href="">WELCOME, </a>{{ request.user.username }}</li>
+        <li><a href="{% url 'login' %}">Logout</a></li>
+      </ul>
+    </nav>
+    <section class="front">
+      <div class="text">
+        <h1>
+        Forgetting Passwords? 
+        </h1>
+        <h2>Remember your passwords with the bull.</h2>
+        <div class="button">
+          <button>
+            <a href="{% url 'create_todo'%}">GET STARTED</a>
+          </button>
+        </div>
+      </div>
+      <div class="ani">
+        <script
+          src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+          type="module"
+        ></script>
+
+        <dotlottie-player
+          src="https://lottie.host/b1ceffe2-38d3-4f80-bc16-90ff2ffcd3c0/wXvblfK3Sz.json"
+          background="transparent"
+          speed="1"
+          style="width: 600px; height: 600px"
+          loop
+          autoplay
+        ></dotlottie-player>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 CYBER VAULT. All rights reserved.</p>
+        <ul class="social-links">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

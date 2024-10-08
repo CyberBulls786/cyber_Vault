@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CYBER VAULT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: #3473d1;
+      font-family: 'Roboto', sans-serif;
+      padding: 20px;
+    }
+
+    h3 {
+      text-align: center;
+      color: white;
+      margin: 20px 0;
+      font-size: 35px;
+    }
+    button {
+      background-color: #E74C3C;
+      border: none;
+      border-radius: 5rem;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border: 1px solid black;
+      border-radius: 5rem;
+    }
+
+    button a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .anmation dotlottie-player {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+
+      .logo img {
+        width: 80%;
+      }
+
+      .anmation dotlottie-player {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h3 {
+        font-size: 1rem;
+      }
+
+      button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+
+      .logo img {
+        width: 70%;
+      }
+
+      .anmation dotlottie-player {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/hack-aaf68.appspot.com/o/Web_Photo_Editor-removebg-preview.png?alt=media&token=a8aa1779-2c2c-4cc7-86b4-736745cff310" width="450px"
+      alt="logo" />
+  </div>
+
+  <div class="anmation">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <dotlottie-player src="https://lottie.host/5f4d92ae-ba2e-4871-809d-5f2ea8132c58/B6LYBhQoPf.json"
+      background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
+  </div>
+
+  <div class="text">
+    <h3>Remember your passwords with the bull.</h3>
+  </div>
+
+  <div class="button">
+    <button onclick="location.href='{% url 'login' %}'">GET STARTED</button>
+  </div>
+</body>
+
+</html>
